@@ -26,6 +26,7 @@ body{
     width: 375px;    /* Le doy la resolución para movil */
     text-align: center;
     margin: auto;
+    box-sizing: border-box;
 }
 
 .card{
@@ -57,14 +58,14 @@ body{
     
 }
 
-.card__image--active{
+.card__image__active{
 
     width: 100%;
     height: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: var(--Cyan);
+    background:radial-gradient(circle, hsla(178, 100%, 50%, 0.1) 0%,hsla(178, 100%, 50%, 0.3) 100%);  /* corrijo la opacidad del icono y se la pongo al color de fondo */
     opacity: 0;
     transition: opacity .5s linear;
     border-radius: 10px;
@@ -110,7 +111,7 @@ body{
     justify-content: space-between; /* acomodar los elementos a los lados */
     align-items: baseline;
     padding-bottom: 10px;
-    border-bottom: 2px var(--Very-dark-line) solid;
+    border-bottom: 2px var(--Very-dark-line) solid; /* hr, que separa los bloques card__description__value de card__description__author */
 }
 
 .card__description__value-et{
@@ -184,8 +185,8 @@ body{
         
     }
 
-    .card__image:hover > .card__image--active {
-        opacity: .3;
+    .card__image:hover > .card__image__active {
+        opacity: 1; /* le doy toda la opacidad para que el icono conserve su color original */
         cursor: pointer;
     }
 
